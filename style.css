@@ -275,6 +275,35 @@ body {
   font-size: 16px;
 }
 
+/* Contact Map Styling */
+.contact-map {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px; /* less space */
+  padding: 0 20px;
+}
+
+
+.contact-map iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  border: 2px solid #ff004f;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 0, 79, 0.4);
+}
+
+@media (max-width: 768px) {
+  .contact-map {
+    padding: 0 10px;
+  }
+
+  .contact-map iframe {
+    height: 250px;
+  }
+}
+
+
 /* --------- Mobile Responsive Fixes (≤768px) --------- */
 @media (max-width: 768px) {
   /* Navbar */
