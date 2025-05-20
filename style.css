@@ -9,7 +9,7 @@ body {
   background-color: #373434;
   color: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* ---------- Navbar ---------- */
@@ -67,45 +67,26 @@ body {
 /* ---------- Hero Section ---------- */
 .hero {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 60px 30px;
   flex-wrap: wrap;
-}
-
-.hero-text {
-  max-width: 600px;
-}
-
-.role {
-  font-size: 18px;
-  color: #ccc;
-  margin-bottom: 10px;
-}
-
-.hero-text h1,
-.hero-text h2,
-.hero-text h3 {
-  margin-left: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 40px;
+  text-align: center;
 }
 
 .hero-text h1 {
-  font-size: 40px;
-}
-
-.hero-text h2 {
-  font-size: 32px;
-  margin-top: 10px;
-}
-
-.hero-text h3 {
-  font-size: 24px;
-  margin-top: 10px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #fff;
 }
 
 .hero-text h1 span {
   color: #ff004f;
+}
+
+.hero-text h2, .hero-text h3 {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #ccc;
 }
 
 .hero-image img {
@@ -124,37 +105,34 @@ body {
 }
 
 .about-container {
-  max-width: 1100px;
   display: flex;
   flex-wrap: wrap;
+  max-width: 1100px;
   gap: 40px;
+  justify-content: center;
   align-items: center;
 }
 
-.about-photo {
-  flex: 1 1 300px;
-  text-align: center;
-}
-
 .about-photo img {
-  max-width: 100%;
+  max-width: 300px;
+  width: 100%;
   border-radius: 10px;
   border: 3px solid #ff004f;
   box-shadow: 0 0 15px rgba(255, 0, 79, 0.5);
 }
 
 .about-text {
-  flex: 2 1 500px;
+  max-width: 600px;
 }
 
 .about-text h1 {
-  font-size: 32px;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   color: #ff004f;
   margin-bottom: 20px;
 }
 
 .about-text p {
-  font-size: 16px;
+  font-size: 1rem;
   color: #ccc;
 }
 
@@ -169,9 +147,10 @@ body {
 .skills-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
-  align-items: center;
   max-width: 1200px;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .skills-image img {
@@ -183,11 +162,11 @@ body {
 }
 
 .skills {
-  flex: 1 1 500px;
+  flex: 1 1 400px;
 }
 
 .skills h1 {
-  font-size: 32px;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   color: #ff004f;
   margin-bottom: 20px;
 }
@@ -199,18 +178,18 @@ body {
 
 .skills ul li {
   background: #111;
-  padding: 15px 20px;
+  padding: 15px;
   margin-bottom: 15px;
   border-left: 6px solid #ff004f;
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 /* ---------- Contact Section ---------- */
 .contact-section {
   padding: 60px 20px;
-  background-color: #373434;
   display: flex;
   justify-content: center;
+  background-color: #373434;
 }
 
 .contact-container {
@@ -220,7 +199,7 @@ body {
 }
 
 .contact-container h1 {
-  font-size: 32px;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   color: #ff004f;
   margin-bottom: 10px;
 }
@@ -239,18 +218,18 @@ body {
 .contact-form input,
 .contact-form textarea {
   padding: 12px;
-  font-size: 16px;
-  border: none;
+  font-size: 1rem;
   border-radius: 5px;
+  border: none;
 }
 
 .contact-form button {
   background-color: #ff004f;
   color: white;
   padding: 12px;
-  font-size: 16px;
-  border: none;
+  font-size: 1rem;
   border-radius: 5px;
+  border: none;
   cursor: pointer;
   transition: background 0.3s ease;
 }
@@ -266,14 +245,12 @@ body {
 }
 
 .contact-info p {
-  font-size: 14px;
+  font-size: 0.9rem;
   margin: 8px 0;
 }
 
 /* ---------- Media Queries ---------- */
-
-/* Tablets (≤1024px) */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -281,82 +258,38 @@ body {
 
   .nav-links {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding-top: 10px;
     width: 100%;
+    margin-top: 10px;
   }
 
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
+  .hero,
   .about-container,
   .skills-container {
     flex-direction: column;
     text-align: center;
   }
-}
 
-/* Mobile (≤768px) */
-@media (max-width: 768px) {
-  .logo img {
-    height: 40px;
-    width: 40px;
-  }
-
-  .hero-text h1 {
-    font-size: 28px;
-  }
-
-  .hero-text h2 {
-    font-size: 22px;
-  }
-
-  .hero-text h3 {
-    font-size: 18px;
-  }
-
-  .about-text h1,
-  .skills h1,
-  .contact-container h1 {
-    font-size: 24px;
-  }
-
-  .about-text p,
-  .contact-container p,
-  .skills ul li,
-  .contact-info p {
-    font-size: 14px;
-  }
-
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form button {
-    font-size: 14px;
+  .about-photo img,
+  .skills-image img,
+  .hero-image img {
+    max-width: 90%;
   }
 }
 
-/* Extra Small Devices (≤480px) */
 @media (max-width: 480px) {
   .navbar {
-    padding: 10px 15px;
+    padding: 15px;
   }
 
   .nav-links li a {
-    font-size: 14px;
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
   }
 
   .hero {
-    padding: 40px 20px;
-  }
-
-  .hero-image img {
-    max-width: 260px;
-  }
-
-  .skills-image img {
-    max-width: 260px;
+    padding: 40px 10px;
   }
 }
