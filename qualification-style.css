@@ -1,0 +1,135 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #373434;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: #000;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 80px;
+  background-color: #000000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Logo inside circle */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+}
+
+.logo span {
+  color: #ff004f;
+}
+
+.logo img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #ff004f;
+}
+
+/* Qualification Section */
+.qualification-section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.qualification-container h1 {
+  font-size: 3rem;
+  color: #ff004f;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.qualification-item {
+  background: #1a1a1a;
+  padding: 20px 30px;
+  border-left: 6px solid #ff004f;
+  margin-bottom: 25px;
+  border-radius: 10px;
+}
+
+.qualification-item h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.qualification-item p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin: 6px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .qualification-container h1 {
+    font-size: 2.4rem;
+  }
+
+  .qualification-item h2 {
+    font-size: 1.6rem;
+  }
+
+  .qualification-item p {
+    font-size: 1rem;
+  }
+}
