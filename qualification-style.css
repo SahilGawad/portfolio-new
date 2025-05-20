@@ -1,4 +1,4 @@
-/* Reset */
+/* ---------- Reset & Base Styles ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -9,34 +9,25 @@ body {
   background-color: #373434;
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
 }
 
-/* Navigation */
+/* ---------- Navbar ---------- */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
-  background: #000;
+  padding: 15px 30px;
+  background-color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
 }
 
-/* Navbar container */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
-  height: 80px;
-  background-color: #000000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* Logo inside circle */
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
   color: white;
 }
@@ -54,11 +45,11 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Navigation Links */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -73,7 +64,7 @@ body {
   color: #ff004f;
 }
 
-/* Qualification Section */
+/* ---------- Qualification Section ---------- */
 .qualification-section {
   padding: 60px 20px;
   max-width: 900px;
@@ -106,7 +97,7 @@ body {
   margin: 6px 0;
 }
 
-/* Responsive Styles */
+/* ---------- Responsive Styles ---------- */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -116,20 +107,60 @@ body {
 
   .nav-links {
     flex-direction: column;
+    align-items: flex-start;
     gap: 15px;
-    width: 100%;
     margin-top: 10px;
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .logo img {
+    height: 40px;
+    width: 40px;
   }
 
   .qualification-container h1 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .qualification-item h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .qualification-item p {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+  }
+
+  .qualification-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .qualification-item {
+    padding: 15px 20px;
+  }
+
+  .qualification-item h2 {
+    font-size: 1.3rem;
+  }
+
+  .qualification-item p {
+    font-size: 0.95rem;
   }
 }
