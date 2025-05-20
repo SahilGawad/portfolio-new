@@ -5,22 +5,17 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: 100%;
+  overflow: hidden; /* Prevent scroll */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #373434;
   color: #fff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Navigation */
-.navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 60px;
-  background: #000;
+  flex-direction: column;
 }
 
-/* Navbar container */
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -31,17 +26,14 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Logo image */
 .logo img {
   height: 50px;
   width: 50px;
-  border-radius: 50%;        /* Makes it round */
-  object-fit: cover;        /* Ensures the image fills the circle */
-  border: 2px solid #333;    /* Optional: border color */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Optional: shadow */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #333;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
-
-
 
 .nav-links {
   list-style: none;
@@ -60,13 +52,14 @@ body {
   color: #ff004f;
 }
 
-/* Hero Section */
+/* Main Content (Hero) */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 80px 60px;
-  min-height: 80vh;
+  padding: 20px 60px;
+  flex: 1;
+  overflow: hidden;
 }
 
 .hero-text {
@@ -77,6 +70,12 @@ body {
   font-size: 18px;
   color: #ccc;
   margin-bottom: 10px;
+  margin-left: 40px;
+}
+
+.hero-text h3 {
+  font-size: 30px;
+  margin-left: 40px;
 }
 
 .hero-text h1 {
@@ -87,7 +86,6 @@ body {
 
 .hero-text h1 span {
   color: #ff004f;
-  
 }
 
 .hero-text h2 {
@@ -96,17 +94,56 @@ body {
   margin-left: 40px;
 }
 
-.hero-text h3 {
-  font-size: 30px;
-  margin-top: 10px;
-  margin-left: 40px;
-}
 .hero-image img {
-  width: 450px;
+  width: 400px;
   height: auto;
-  margin-right: 60px;
+  margin-right: 40px;
   border-radius: 10px;
   box-shadow: 0 0 25px rgba(255, 0, 79, 0.4);
+}
+
+/* Footer Section */
+.footer {
+  background-color: #373434;
+  text-align: center;
+  padding: 20px 0;
+ 
+}
+
+/* Introduction Button */
+.intro-btn {
+  background-color: #ff004f;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.intro-btn:hover {
+  background-color: #e60045;
+  transform: scale(1.05);
+}
+
+/* Optional: Allow scroll on very small screens */
+@media (max-height: 600px) {
+  html, body {
+    overflow-y: auto;
+  }
+
+  .hero {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero-image img {
+    margin: 20px auto 0;
+  }
 }
 
 
