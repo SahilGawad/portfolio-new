@@ -5,14 +5,14 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  overflow: hidden; /* Prevent scroll */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
   background-color: #373434;
   color: #fff;
-  display: flex;
-  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 /* Navbar */
@@ -52,14 +52,14 @@ html, body {
   color: #ff004f;
 }
 
-/* Main Content (Hero) */
+/* Hero Section */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 60px;
-  flex: 1;
-  overflow: hidden;
+  padding: 80px 60px;
+  min-height: 80vh;
+  flex-wrap: wrap;
 }
 
 .hero-text {
@@ -70,18 +70,12 @@ html, body {
   font-size: 18px;
   color: #ccc;
   margin-bottom: 10px;
-  margin-left: 40px;
-}
-
-.hero-text h3 {
-  font-size: 30px;
-  margin-left: 40px;
 }
 
 .hero-text h1 {
   font-size: 48px;
   font-weight: bold;
-  margin-left: 40px;
+  margin-left: 80px;
 }
 
 .hero-text h1 span {
@@ -91,63 +85,63 @@ html, body {
 .hero-text h2 {
   font-size: 40px;
   margin-top: 10px;
-  margin-left: 40px;
+  margin-left: 80px;
+}
+
+.hero-text h3 {
+  font-size: 30px;
+  margin-top: 1px;
+  margin-left: 80px;
+}
+
+.hero-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 100px;
 }
 
 .hero-image img {
-  width: 400px;
+  width: 350px;
   height: auto;
-  margin-right: 40px;
   border-radius: 10px;
   box-shadow: 0 0 25px rgba(255, 0, 79, 0.4);
 }
 
-/* Footer Section */
-.footer {
-  background-color: #373434;
-  text-align: center;
-  padding: 20px 0;
- 
+/* Intro Button */
+.intro-button-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-/* Introduction Button */
 .intro-btn {
+  padding: 12px 28px;
   background-color: #ff004f;
   color: white;
   border: none;
-  padding: 12px 30px;
+  border-radius: 6px;
   font-size: 16px;
-  font-weight: bold;
-  border-radius: 30px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 0, 79, 0.3);
 }
 
 .intro-btn:hover {
   background-color: #e60045;
-  transform: scale(1.05);
 }
 
-/* Optional: Allow scroll on very small screens */
-@media (max-height: 600px) {
-  html, body {
-    overflow-y: auto;
-  }
-
-  .hero {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .hero-image img {
-    margin: 20px auto 0;
-  }
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #373434;
 }
 
-
-/*..........................About Page..........................*/
+/* About Section */
 .about-section {
   padding: 80px 20px;
   background-color: #373434;
@@ -194,8 +188,7 @@ html, body {
   color: #ccc;
 }
 
-/*..........................skills page..........................*/
-
+/* Skills Section */
 .skills-section {
   background-color: #373434;
   padding: 100px 40px;
@@ -211,7 +204,7 @@ html, body {
 }
 
 .skills-image img {
-  width: 400px; /* Increased size */
+  width: 400px;
   height: auto;
   border-radius: 12px;
   border: 4px solid #ff004f;
@@ -219,7 +212,7 @@ html, body {
 }
 
 .skills h1 {
-  font-size: 48px; /* Increased font size */
+  font-size: 48px;
   margin-bottom: 30px;
 }
 
@@ -230,25 +223,13 @@ html, body {
 
 .skills ul li {
   background: #111;
-  padding: 20px 25px; /* Increased padding */
+  padding: 20px 25px;
   margin: 15px 0;
   border-left: 6px solid #ff004f;
-  font-size: 24px; /* Larger font size */
+  font-size: 24px;
 }
 
-
-/*.......................... Contact page ..........................*/
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-image {
-    margin-top: 30px;
-  }
-}
-
+/* Contact Section */
 .contact-section {
   padding: 80px 20px;
   background-color: #373434;
@@ -312,14 +293,13 @@ html, body {
   font-size: 16px;
 }
 
-/* Contact Map Styling */
+/* Map */
 .contact-map {
   display: flex;
   justify-content: center;
-  margin-top: 0px; /* less space */
+  margin-top: 0px;
   padding: 0 20px;
 }
-
 
 .contact-map iframe {
   width: 100%;
@@ -330,20 +310,43 @@ html, body {
   box-shadow: 0 0 15px rgba(255, 0, 79, 0.4);
 }
 
-@media (max-width: 768px) {
-  .contact-map {
-    padding: 0 10px;
+/* Responsive Design */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
   }
 
-  .contact-map iframe {
-    height: 250px;
+  .hero-text {
+    margin-bottom: 30px;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+    margin-left: 0;
+  }
+
+  .hero-text h2 {
+    font-size: 24px;
+    margin-left: 0;
+  }
+
+  .hero-text h3 {
+    font-size: 18px;
+    margin-left: 0;
+  }
+
+  .hero-image {
+    margin-right: 0;
+  }
+
+  .hero-image img {
+    max-width: 90%;
   }
 }
 
-
-/* --------- Mobile Responsive Fixes (≤768px) --------- */
 @media (max-width: 768px) {
-  /* Navbar */
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -358,79 +361,16 @@ html, body {
     margin-top: 10px;
   }
 
-  .nav-links li {
-    width: 100%;
-  }
-
   .nav-links li a {
     display: block;
-    width: 100%;
     font-size: 14px;
     padding: 8px 0;
   }
 
-  /* Hero Section */
-  .hero {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  .hero-text {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .hero-text h1 {
-    font-size: 26px;
-  }
-
-  .hero-text h2 {
-    font-size: 20px;
-  }
-
-  .hero-text h3 {
-    font-size: 16px;
-  }
-
-  .hero-image img {
-    max-width: 90%;
-    height: auto;
-  }
-
-  /* About Section */
-  .about-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-photo img {
-    max-width: 90%;
-  }
-
-  .about-text h1 {
-    font-size: 24px;
-  }
-
-  .about-text p {
-    font-size: 14px;
-  }
-
-  /* Skills Section */
+  .about-container,
   .skills-container {
     flex-direction: column;
-    align-items: center;
     text-align: center;
-  }
-
-  .skills-image img {
-    max-width: 90%;
-  }
-
-  .skills h1 {
-    font-size: 24px;
   }
 
   .skills ul li {
@@ -438,24 +378,19 @@ html, body {
     padding: 10px 15px;
   }
 
-  /* Contact Section */
-  .contact-container {
-    width: 100%;
-    padding: 0 10px;
-  }
-
+  .skills h1,
+  .about-text h1,
   .contact-container h1 {
     font-size: 24px;
   }
 
   .contact-container p,
-  .contact-info p {
+  .contact-info p,
+  .about-text p {
     font-size: 14px;
   }
 
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form button {
-    font-size: 14px;
+  .contact-map iframe {
+    height: 250px;
   }
 }
