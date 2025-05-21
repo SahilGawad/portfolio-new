@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sahil | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
- <nav class="navbar">
+  <nav class="navbar">
     <div class="logo">
       <img src="logo.jpg" alt="Sahil Logo" />
     </div>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -22,27 +30,38 @@
 
   <section class="hero">
     <div class="hero-text">
-      <p class="role"><h3>Web Developer</h3></p>
-      
+      <p class="role">
+      <h3>Web Developer</h3>
+      </p>
+
       <h1>Hi, I'm <span>Sahil</span></h1>
       <h2>From India</h2>
     </div>
     <div class="hero-image">
-  <img src="main.png" alt="Your Photo">
-  <div class="intro-button-wrapper">
-    <a href="video.html">
-        <button class="intro-btn">Introduction</button>
-      </a>
-  </div>
-  
-</div>
+      <img src="main.png" alt="Your Photo">
+      <div class="intro-button-wrapper">
+        <a href="video.html">
+          <button class="intro-btn">Introduction</button>
+        </a>
+      </div>
 
-</div>
-</section>
- <footer class="footer">
-  
-</footer>
+    </div>
 
-  
+    </div>
+  </section>
+  <footer class="footer">
+
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
 </body>
+
 </html>

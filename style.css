@@ -24,6 +24,7 @@ html, body {
   height: 80px;
   background-color: #000000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative; /* for absolute menu on mobile */
 }
 
 .logo img {
@@ -50,6 +51,24 @@ html, body {
 
 .nav-links li a:hover {
   color: #ff004f;
+}
+
+/* Hamburger Menu Styling */
+.hamburger {
+  display: none; /* hidden by default */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  width: 30px;
+  height: 25px;
+  justify-content: center;
+}
+
+.hamburger span {
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: 0.3s;
 }
 
 /* Hero Section */
@@ -311,7 +330,49 @@ html, body {
 }
 
 /* Responsive Design */
-@media (max-width: 900px) {
+
+/* Mobile Hamburger Menu and Nav Links */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    padding: 15px 20px;
+    position: relative;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide nav links by default */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #000;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    padding: 20px 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+
+  /* Show nav links when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 15px 40px;
+    width: 100%;
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+  }
+
+  /* Adjust hero section for smaller screens */
   .hero {
     flex-direction: column;
     text-align: center;
@@ -344,29 +405,8 @@ html, body {
   .hero-image img {
     max-width: 90%;
   }
-}
 
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .nav-links li a {
-    display: block;
-    font-size: 14px;
-    padding: 8px 0;
-  }
-
+  /* About and Skills layout */
   .about-container,
   .skills-container {
     flex-direction: column;
